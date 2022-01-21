@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{93EC3005-E0F9-4327-9B54-57F74EA4B09D}</ProjectGuid>
+    <TemplateGuid>{1bc93793-694f-48fe-9372-81e2b05556fd}</TemplateGuid>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
+    <Configuration>Debug</Configuration>
+    <Platform Condition="'$(Platform)' == ''">Win32</Platform>
+    <RootNamespace>kcpplib</RootNamespace>
+    <WindowsTargetPlatformVersion>$(LatestTargetPlatformVersion)</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <TargetVersion>Windows7</TargetVersion>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>WindowsKernelModeDriver10.0</PlatformToolset>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <DriverType>KMDF</DriverType>
+    <DriverTargetPlatform>
+    </DriverTargetPlatform>
+    <Driver_SpectreMitigation>false</Driver_SpectreMitigation>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
+    <OutDir>$(SolutionDir)../../Output</OutDir>
+    <IncludePath>$(VC_IncludePath);$(ProjectDir)../;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Link>
+      <TreatLinkerWarningAsErrors>false</TreatLinkerWarningAsErrors>
+      <EntryPointSymbol>DriverEntry</EntryPointSymbol>
+      <GenerateMapFile>true</GenerateMapFile>
+    </Link>
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <ClCompile>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <ControlFlowGuard>false</ControlFlowGuard>
+      <AdditionalOptions>-cbstring %(ClCompile.AdditionalOptions)</AdditionalOptions>
+      <ExceptionHandling>false</ExceptionHandling>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <FilesToPackage Include="$(TargetPath)" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="cpp_path\cpp_path.cpp" />
+    <ClCompile Include="kcpplib.cpp" />
+    <ClCompile Include="kcrt\err.c" />
+    <ClCompile Include="kcrt\fltintrn.c" />
+    <ClCompile Include="kcrt\invargc.c" />
+    <ClCompile Include="kcrt\kcrtc.c" />
+    <ClCompile Include="kcrt\kcrtfs.c" />
+    <ClCompile Include="kcrt\strtod.c" />
+    <ClCompile Include="kcrt\strtoll.c" />
+    <ClCompile Include="kstl\kernel_stl.cpp" />
+    <ClCompile Include="kstl\stdcpp.cpp" />
+    <ClCompile Include="kstl\typeinfo.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="cpp_path\cpp_path.hpp" />
+    <ClInclude Include="kcpplib.h" />
+    <ClInclude Include="kcrt\kcrt.h" />
+    <ClInclude Include="kstl\kernel_stl.h" />
+    <ClInclude Include="kstl\kstl.h" />
+    <ClInclude Include="kstl\kstlhead.h" />
+    <ClInclude Include="kstl\kstl_stdint.h" />
+    <ClInclude Include="kstl\scope.h" />
+    <ClInclude Include="kstl\Singleton.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="kcrt">
+      <UniqueIdentifier>{a23e8903-ccfc-4f57-b56c-329d9765917b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cpp_path">
+      <UniqueIdentifier>{c3996a20-23c2-464c-adc3-4367af8f0744}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="kstl">
+      <UniqueIdentifier>{1bba55f9-bb52-4d18-b189-ec084c9a272b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="kcrt\err.c">
+      <Filter>kcrt</Filter>
+    </ClCompile>
+    <ClCompile Include="kcrt\fltintrn.c">
+      <Filter>kcrt</Filter>
+    </ClCompile>
+    <ClCompile Include="kcrt\invargc.c">
+      <Filter>kcrt</Filter>
+    </ClCompile>
+    <ClCompile Include="kcrt\kcrtc.c">
+      <Filter>kcrt</Filter>
+    </ClCompile>
+    <ClCompile Include="kcrt\kcrtfs.c">
+      <Filter>kcrt</Filter>
+    </ClCompile>
+    <ClCompile Include="kcrt\strtod.c">
+      <Filter>kcrt</Filter>
+    </ClCompile>
+    <ClCompile Include="kcrt\strtoll.c">
+      <Filter>kcrt</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp_path\cpp_path.cpp">
+      <Filter>cpp_path</Filter>
+    </ClCompile>
+    <ClCompile Include="kstl\kernel_stl.cpp">
+      <Filter>kstl</Filter>
+    </ClCompile>
+    <ClCompile Include="kstl\stdcpp.cpp">
+      <Filter>kstl</Filter>
+    </ClCompile>
+    <ClCompile Include="kstl\typeinfo.cpp">
+      <Filter>kstl</Filter>
+    </ClCompile>
+    <ClCompile Include="kcpplib.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="kcrt\kcrt.h">
+      <Filter>kcrt</Filter>
+    </ClInclude>
+    <ClInclude Include="cpp_path\cpp_path.hpp">
+      <Filter>cpp_path</Filter>
+    </ClInclude>
+    <ClInclude Include="kstl\kernel_stl.h">
+      <Filter>kstl</Filter>
+    </ClInclude>
+    <ClInclude Include="kstl\kstl.h">
+      <Filter>kstl</Filter>
+    </ClInclude>
+    <ClInclude Include="kstl\kstl_stdint.h">
+      <Filter>kstl</Filter>
+    </ClInclude>
+    <ClInclude Include="kstl\Singleton.h">
+      <Filter>kstl</Filter>
+    </ClInclude>
+    <ClInclude Include="kstl\kstlhead.h">
+      <Filter>kstl</Filter>
+    </ClInclude>
+    <ClInclude Include="kstl\scope.h">
+      <Filter>kstl</Filter>
+    </ClInclude>
+    <ClInclude Include="kcpplib.h" />
+  </ItemGroup>
+</Project>
