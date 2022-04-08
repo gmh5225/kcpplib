@@ -69,7 +69,7 @@ DriverEntry(__in DRIVER_OBJECT *driverObject, __in UNICODE_STRING *registryPath)
 
     if (_cinit() != 0)
     {
-        //这里存在潜在的风险(理论100%成功，失败需要弹框GG)
+        //这里存在潜在的风险(理论100%成功，失败需要GG)
         // return STATUS_APP_INIT_FAILURE;
     }
 
@@ -105,7 +105,7 @@ DriverEntry(__in DRIVER_OBJECT *driverObject, __in UNICODE_STRING *registryPath)
         }
         else
         {
-            //防止被人抹去(R3获取到后应该弹框GG)
+            //防止被人抹去
             ns = STATUS_VIRUS_DELETED;
             goto _exit;
         }
@@ -129,7 +129,7 @@ DriverEntry(__in DRIVER_OBJECT *driverObject, __in UNICODE_STRING *registryPath)
     }
     else
     {
-        //防止被人无模块加载利用 (R3获取到后应该弹框GG)
+        //防止被人无模块加载利用
         ns = STATUS_VIRUS_INFECTED;
         goto _exit;
     }
