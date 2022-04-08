@@ -270,6 +270,9 @@ int __cdecl _cinit(void)
 _PVFV
 _onexit(_PVFV lpfn)
 {
+    if (!lpfn)
+        return NULL;
+
     PON_EXIT_ENTRY _Entry = (PON_EXIT_ENTRY)malloc(sizeof(ON_EXIT_ENTRY));
 
     if (!_Entry)
