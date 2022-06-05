@@ -15,3 +15,6 @@ fltMgr.lib
 Ntoskrnl.lib "
 
 to your project.
+
+# Compile
+llvm-msvc [[link]](https://github.com/NewWorldComingSoon/llvm-msvc-build)
