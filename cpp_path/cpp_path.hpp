@@ -214,17 +214,20 @@ private:
 
 /* Constructor */
 inline Path::Path(const char *str) : path(str) {}
+Path::Path(const char *str) : path(str) {}
 
 /**************************************************************************
  * Operators
  *************************************************************************/
 inline Path &
+Path &
 Path::operator<<(const Path &segment)
 {
     return append(segment);
 }
 
 inline Path
+Path
 Path::operator+(const Path &segment) const
 {
     Path result(path);
@@ -233,6 +236,7 @@ Path::operator+(const Path &segment) const
 }
 
 inline bool
+bool
 Path::equivalent(const Path &other)
 {
     /* Make copies of both paths, sanitize, and ensure they're equal */
@@ -240,6 +244,7 @@ Path::equivalent(const Path &other)
 }
 
 inline stlx::string
+stlx::string
 Path::filename() const
 {
     size_t pos = path.rfind(separator);
@@ -251,6 +256,7 @@ Path::filename() const
 }
 
 inline stlx::string
+stlx::string
 Path::extension() const
 {
     /* Make sure we only look in the filename, and not the path */
@@ -264,6 +270,7 @@ Path::extension() const
 }
 
 inline Path
+Path
 Path::stem() const
 {
     size_t sep_pos = path.rfind(separator);
@@ -287,6 +294,7 @@ Path::stem() const
  * Manipulators
  *************************************************************************/
 inline Path &
+Path &
 Path::append(const Path &segment)
 {
     /* First, check if the last character is the separator character.
@@ -301,6 +309,7 @@ Path::append(const Path &segment)
 }
 
 inline Path &
+Path &
 Path::relative(const Path &rel)
 {
     if (!rel.is_absolute())
@@ -315,6 +324,7 @@ Path::relative(const Path &rel)
 }
 
 inline Path &
+Path &
 Path::up()
 {
     /* Make sure we turn this into an absolute url if it's not already
@@ -334,6 +344,7 @@ Path::up()
 }
 
 inline Path &
+Path &
 Path::absolute()
 {
     /* If the path doesn't begin with our separator, then it's not an
@@ -348,6 +359,7 @@ Path::absolute()
 }
 
 inline Path &
+Path &
 Path::sanitize()
 {
     /* Split the path up into segments */
@@ -414,6 +426,7 @@ Path::sanitize()
 }
 
 inline Path &
+Path &
 Path::directory()
 {
     trim();
@@ -422,6 +435,7 @@ Path::directory()
 }
 
 inline Path &
+Path &
 Path::trim()
 {
     if (path.length() == 0)
@@ -447,6 +461,7 @@ Path::trim()
 
 /* Returns a vector of each of the path segments in this path */
 inline stlx::vector<Path::Segment>
+stlx::vector<Path::Segment>
 Path::split() const
 {
     stlx::string t;
@@ -478,12 +493,14 @@ Path::split() const
  * Tests
  *************************************************************************/
 inline bool
+bool
 Path::is_absolute() const
 {
     return path.size() && path[0] == separator;
 }
 
 inline bool
+bool
 Path::trailing_slash() const
 {
     return path.size() && path[path.length() - 1] == separator;
@@ -493,6 +510,7 @@ Path::trailing_slash() const
  * Static Utility Methods
  *************************************************************************/
 inline Path
+Path
 Path::join(const Path &a, const Path &b)
 {
     Path p(a);
@@ -501,6 +519,7 @@ Path::join(const Path &a, const Path &b)
 }
 
 inline Path
+Path
 Path::join(const stlx::vector<Segment> &segments)
 {
     stlx::string path;
@@ -519,6 +538,7 @@ Path::join(const stlx::vector<Segment> &segments)
 }
 
 inline Path
+Path
 Path::cwd()
 {
     Path p("/");
