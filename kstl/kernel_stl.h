@@ -64,7 +64,7 @@ operator new(_In_ size_t size);
 void *__cdecl
 operator new[](_In_ size_t size);
 
-// lua 需要的(其实是eastl)
+// lua 脨猫脪陋碌脛(脝盲脢碌脢脟eastl)
 void *
 operator new[](size_t size, const char *, int, unsigned, const char *, int);
 void *
@@ -93,7 +93,7 @@ operator delete(_In_ void *p, _In_ size_t size);
 ///         character, or a negative value if an output error occurs
 _Success_(return >= 0)
 EXTERN_C
-inline int __cdecl __stdio_common_vsprintf_s(
+int __cdecl __stdio_common_vsprintf_s(
     _In_ unsigned __int64 _Options,
     _Out_writes_z_(_BufferCount) char *_Buffer,
     _In_ size_t _BufferCount,
@@ -103,7 +103,7 @@ inline int __cdecl __stdio_common_vsprintf_s(
 
 _Success_(return >= 0)
 EXTERN_C
-inline int __cdecl __stdio_common_vsprintf(
+int __cdecl __stdio_common_vsprintf(
     _In_ unsigned __int64 _Options,
     _Out_writes_z_(_BufferCount) char *_Buffer,
     _In_ size_t _BufferCount,
@@ -122,7 +122,7 @@ inline int __cdecl __stdio_common_vsprintf(
 ///         character, or a negative value if an output error occurs
 _Success_(return >= 0)
 _Check_return_opt_ EXTERN_C
-inline int __cdecl __stdio_common_vswprintf_s(
+int __cdecl __stdio_common_vswprintf_s(
     _In_ unsigned __int64 _Options,
     _Out_writes_z_(_BufferCount) wchar_t *_Buffer,
     _In_ size_t _BufferCount,
@@ -132,7 +132,7 @@ inline int __cdecl __stdio_common_vswprintf_s(
 
 _Success_(return >= 0)
 _Check_return_opt_ EXTERN_C
-inline int __cdecl __stdio_common_vswprintf(
+int __cdecl __stdio_common_vswprintf(
     _In_ unsigned __int64 _Options,
     _Out_writes_z_(_BufferCount) wchar_t *_Buffer,
     _In_ size_t _BufferCount,
