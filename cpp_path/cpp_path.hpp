@@ -213,20 +213,17 @@ private:
 };
 
 /* Constructor */
-inline Path::Path(const char *str) : path(str) {}
 Path::Path(const char *str) : path(str) {}
 
 /**************************************************************************
  * Operators
  *************************************************************************/
-inline Path &
 Path &
 Path::operator<<(const Path &segment)
 {
     return append(segment);
 }
 
-inline Path
 Path
 Path::operator+(const Path &segment) const
 {
@@ -235,7 +232,6 @@ Path::operator+(const Path &segment) const
     return result;
 }
 
-inline bool
 bool
 Path::equivalent(const Path &other)
 {
@@ -243,7 +239,6 @@ Path::equivalent(const Path &other)
     return Path(path).absolute().sanitize() == Path(other).absolute().sanitize();
 }
 
-inline stlx::string
 stlx::string
 Path::filename() const
 {
@@ -255,7 +250,6 @@ Path::filename() const
     return "";
 }
 
-inline stlx::string
 stlx::string
 Path::extension() const
 {
@@ -269,7 +263,6 @@ Path::extension() const
     return "";
 }
 
-inline Path
 Path
 Path::stem() const
 {
@@ -293,7 +286,6 @@ Path::stem() const
 /**************************************************************************
  * Manipulators
  *************************************************************************/
-inline Path &
 Path &
 Path::append(const Path &segment)
 {
@@ -308,7 +300,6 @@ Path::append(const Path &segment)
     return *this;
 }
 
-inline Path &
 Path &
 Path::relative(const Path &rel)
 {
@@ -323,7 +314,6 @@ Path::relative(const Path &rel)
     }
 }
 
-inline Path &
 Path &
 Path::up()
 {
@@ -343,7 +333,6 @@ Path::up()
     return directory();
 }
 
-inline Path &
 Path &
 Path::absolute()
 {
@@ -358,7 +347,6 @@ Path::absolute()
     return *this;
 }
 
-inline Path &
 Path &
 Path::sanitize()
 {
@@ -425,7 +413,6 @@ Path::sanitize()
     return *this;
 }
 
-inline Path &
 Path &
 Path::directory()
 {
@@ -434,7 +421,6 @@ Path::directory()
     return *this;
 }
 
-inline Path &
 Path &
 Path::trim()
 {
@@ -460,7 +446,6 @@ Path::trim()
  *************************************************************************/
 
 /* Returns a vector of each of the path segments in this path */
-inline stlx::vector<Path::Segment>
 stlx::vector<Path::Segment>
 Path::split() const
 {
@@ -492,14 +477,12 @@ Path::split() const
 /**************************************************************************
  * Tests
  *************************************************************************/
-inline bool
 bool
 Path::is_absolute() const
 {
     return path.size() && path[0] == separator;
 }
 
-inline bool
 bool
 Path::trailing_slash() const
 {
@@ -509,7 +492,6 @@ Path::trailing_slash() const
 /**************************************************************************
  * Static Utility Methods
  *************************************************************************/
-inline Path
 Path
 Path::join(const Path &a, const Path &b)
 {
@@ -518,7 +500,6 @@ Path::join(const Path &a, const Path &b)
     return p;
 }
 
-inline Path
 Path
 Path::join(const stlx::vector<Segment> &segments)
 {
@@ -537,7 +518,6 @@ Path::join(const stlx::vector<Segment> &segments)
     return Path(path);
 }
 
-inline Path
 Path
 Path::cwd()
 {
