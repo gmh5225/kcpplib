@@ -98,7 +98,7 @@ int _sys_nerr = sizeof(_sys_errlist) / sizeof(_sys_errlist[0]) - 1;
 
 #define _sys_err_msg(m) _sys_errlist[(((m) < 0) || ((m) >= _sys_nerr) ? _sys_nerr : (m))]
 
-__inline const char *
+const char *
 _get_sys_err_msg(int m)
 {
     return _sys_err_msg(m);
@@ -112,7 +112,7 @@ char *__cdecl strerror(int errnum)
     static char errmsg[_ERRMSGLEN_ + 1];
     RtlSecureZeroMemory(errmsg, sizeof(errmsg));
 
-    //ÔİÊ±²»ÊµÏÖ£¬Ö±½Ó·µ»Ø¿Õ
+    //æš‚æ—¶ä¸å®ç°ï¼Œç›´æ¥è¿”å›ç©º
     // mycrt_strncpy_a(errmsg, _ERRMSGLEN_, _get_sys_err_msg(errnum),);
 
     return (errmsg);
